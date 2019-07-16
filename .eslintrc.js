@@ -1,6 +1,12 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier', 'prettier/@typescript-eslint'],
-  plugins: ['html', 'eslint-plugin-html', '@typescript-eslint', 'import', 'angular', 'eslint-plugin-angular'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'airbnb-base'
+  ],
+  plugins: ['@typescript-eslint', 'import'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
@@ -11,9 +17,6 @@ module.exports = {
     es6: true,
     browser: true,
     node: true
-  },
-  globals: {
-    angular: true
   },
   rules: {
     'no-use-before-define': 0,

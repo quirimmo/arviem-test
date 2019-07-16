@@ -9,5 +9,5 @@ if (environment.production) {
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  /* eslint-disable-next-line angular/log */
+  /* eslint-disable-next-line no-console */
   .catch((err): void => console.error(err));
