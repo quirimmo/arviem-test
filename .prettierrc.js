@@ -3,5 +3,11 @@ module.exports = {
   singleQuote: true,
   printWidth: 120,
   tabWidth: 2,
-  parser: 'typescript'
+  parser: 'typescript',
+  overrides: {
+    files: ['*.html'],
+    options: {
+      parser: 'html'
+    }
+  }
 };

@@ -19,6 +19,9 @@ module.exports = {
     node: true
   },
   rules: {
+    'no-empty-function': 0,
+    'no-useless-constructor': 0,
+    '@typescript-eslint/no-parameter-properties': 0,
     'no-use-before-define': 0,
     'arrow-parens': ['error', 'as-needed'],
     semi: ['error', 'always'],
@@ -41,7 +44,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.spec.*'],
+      files: ['*.spec.*', 'setup-jest.ts'],
       rules: {
         'import/no-extraneous-dependencies': 0,
         '@typescript-eslint/explicit-function-return-type': 0
