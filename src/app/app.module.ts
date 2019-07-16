@@ -10,6 +10,9 @@ import { NgReduxFormModule } from '@angular-redux/form';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { RoutesModule } from './routes/routes.module';
+import { AppLoaderModule } from './app-loader/app-loader.module';
+import { StoreModule } from './store/store.module';
+import { CountriesModule } from './countries/countries.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +28,9 @@ import { RoutesModule } from './routes/routes.module';
     NgReduxRouterModule.forRoot(),
     NgReduxFormModule,
     RoutesModule,
+    AppLoaderModule,
+    StoreModule,
+    CountriesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
