@@ -1,12 +1,52 @@
-@import '~bootstrap/dist/css/bootstrap.css';
-@import '~font-awesome/css/font-awesome.css';
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-$material-icons-font-path: '~material-icons/iconfont/';
-@import 'material-icons/iconfont/material-icons.scss';
-@import '~hover.css/css/hover-min.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$material-icons-font-path: "~material-icons/iconfont/";
+@import "material-icons/iconfont/material-icons.scss";
+@import "~hover.css/css/hover-min.css";
 @import "./colors.scss";
 
 body {
   background-color: $black;
   font-family: Roboto Arial;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background: $blue;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $yellow;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: $yellow;
+}
+
+.mat-input-element {
+  caret-color: $yellow;
+}
+
+input.mat-input-element,
+.mat-select-value {
+  color: white;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mat-select-arrow,
+.mat-select-arrow:focus,
+.mat-select-arrow:active {
+  color: white !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $blue;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: $blue;
 }

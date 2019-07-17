@@ -13,6 +13,7 @@ import { RoutesModule } from './routes/routes.module';
 import { AppLoaderModule } from './app-loader/app-loader.module';
 import { StoreModule } from './store/store.module';
 import { CountriesModule } from './countries/countries.module';
+import { ResolversModule } from './resolvers/resolvers.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { CountriesModule } from './countries/countries.module';
     AppLoaderModule,
     StoreModule,
     CountriesModule,
+    ResolversModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

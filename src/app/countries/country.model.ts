@@ -26,12 +26,10 @@ export const getContinentByRegion = (region: string, subregion: string): Contine
       return Continent.ASIA;
     case 'AFRICA':
       return Continent.AFRICA;
-    case 'POLAR':
-      return Continent.ANTARCTICA;
     case 'AMERICAS':
       return subregion.toUpperCase() === 'SOUTH AMERICA' ? Continent.SOUTH_AMERICA : Continent.NORTH_AMERICA;
     default:
-      throw new Error('Sorry, the given region does not match any knonw Continent');
+      return Continent.ANTARCTICA;
   }
 };
 

@@ -1,0 +1,16 @@
+<section>
+  <section class="row">
+    <div class="col-12">
+      <div class="row">
+        <article
+          class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12"
+          *ngFor="let country of countries"
+          [@bounceInUpOnEnter]
+          [@bounceOutOnLeave]
+        >
+          <country-item [country]="country"></country-item>
+        </article>
+      </div>
+    </div>
+  </section>
+</section>

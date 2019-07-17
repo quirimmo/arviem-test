@@ -1,0 +1,23 @@
+<form>
+  <div class="row">
+    <mat-form-field class="col-12 w-100">
+      <mat-select
+        id="select-country"
+        placeholder="Select the country..."
+        [formControl]="countrySelect"
+        required
+      >
+        <mat-option
+          *ngFor="let country of getCountries()"
+          id="country-option-{{ country.code }}"
+          [value]="country"
+        >
+          {{ country.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="countrySelect.hasError('required')">
+        Please, you must choose a country
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>

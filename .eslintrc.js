@@ -19,6 +19,7 @@ module.exports = {
     node: true
   },
   rules: {
+    "class-methods-use-this": 0,
     "no-tabs": ["error", { allowIndentationTabs: true }],
     "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
     "no-empty-function": 0,
