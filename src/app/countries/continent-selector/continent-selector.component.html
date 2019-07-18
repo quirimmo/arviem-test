@@ -1,25 +1,24 @@
 <form [formGroup]="continentForm" (ngSubmit)="onSubmit()">
-    <div class="row">
-      <mat-form-field class="col-12 w-100">
-        <mat-select
-          id="select-continent"
-          placeholder="Select the continent..."
-          [formControl]="continentSelect"
-          required
+  <div class="row">
+    <mat-form-field class="col-12 w-100">
+      <mat-select
+        id="select-continent"
+        placeholder="Select the continent..."
+        [formControl]="continentSelect"
+        required
+      >
+        <mat-option
+          *ngFor="let continent of continents"
+          id="contnent-option-{{ continent }}"
+          [value]="continent"
         >
-          <mat-option
-            *ngFor="let continent of continents"
-            id="contnent-option-{{ continent }}"
-            [value]="continent"
-          >
-            {{ continent | continent }}
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="continentSelect.hasError('required')">
-          Please, you must choose a continent
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <button type="submit">SUBMIT</button>
-  </form>
-  
+          {{ continent | continent }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="continentSelect.hasError('required')">
+        Please, you must choose a continent
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <button type="submit">SUBMIT</button>
+</form>
