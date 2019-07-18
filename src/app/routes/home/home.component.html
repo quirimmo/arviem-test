@@ -1,7 +1,14 @@
 <section class="container-fluid">
-  <continent-selector (onSelectContinent)="onSelectContinent($event)"></continent-selector>
+  <continent-selector
+    (onSelectContinent)="onSelectContinent($event)"
+  ></continent-selector>
   <br /><br />
-  <country-selector [continent]="continent" [countries]="countries"></country-selector>
+  <country-selector
+    [isDependingOnContinent]="true"
+    [continent]="continent"
+    [countries]="countries"
+    (onSelectCountry)="onSelectCountry($event)"
+  ></country-selector>
   <br /><br />
   <countries-list [countries]="countries"></countries-list>
 </section>

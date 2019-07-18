@@ -15,20 +15,20 @@ export class ContinentSelectorComponent implements OnInit, OnDestroy {
 
 	continents: Continent[] = Object.keys(Continent).map((c: string): Continent => Continent[c]);
 	continentSelect = new FormControl();
-	countryChangeSubscriber: Subscription;
+	continentChangeSubscriber: Subscription;
 
 
 	constructor() {}
 
 	ngOnInit(): void {
-	  this.countryChangeSubscriber = this.continentSelect.valueChanges.subscribe(
+	  this.continentChangeSubscriber = this.continentSelect.valueChanges.subscribe(
 	    (): void => this.onSelectContinent.emit(this.continentSelect.value),
 	  );
 	}
 
 	ngOnDestroy(): void {
-	  if (this.countryChangeSubscriber) {
-	    this.countryChangeSubscriber.unsubscribe();
+	  if (this.continentChangeSubscriber) {
+	    this.continentChangeSubscriber.unsubscribe();
 	  }
 	}
 }

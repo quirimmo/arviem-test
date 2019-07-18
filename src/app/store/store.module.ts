@@ -10,10 +10,14 @@ import thunk from 'redux-thunk';
 import { StoreModel } from './store.model';
 import { StoreReducer } from './store.reducers';
 
+
+const initialStore: StoreModel = { isLoading: true, countries: [], locations: [] };
+
 @NgModule({
   imports: [NgReduxModule, NgReduxRouterModule.forRoot()],
   providers: [],
 })
+
 export class StoreModule {
   constructor(
 		public store: NgRedux<StoreModel>,
@@ -22,7 +26,7 @@ export class StoreModule {
   ) {
     store.configureStore(
       StoreReducer,
-      { isLoading: true },
+      initialStore,
       [thunk],
       devTools.isEnabled() ? [devTools.enhancer()] : [],
     );

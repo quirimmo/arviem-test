@@ -1,6 +1,6 @@
 <form>
   <div class="row">
-    <mat-form-field class="col-12 w-100">
+    <mat-form-field *ngIf="!countrySelect.disabled" class="col-12 w-100">
       <mat-select
         id="select-country"
         placeholder="Select the country..."
@@ -19,5 +19,10 @@
         Please, you must choose a country
       </mat-error>
     </mat-form-field>
+    <div class="col-12 w-100">
+      <mat-error *ngIf="countrySelect.disabled">
+        Please, select first a continent...
+      </mat-error>
+    </div>
   </div>
 </form>
