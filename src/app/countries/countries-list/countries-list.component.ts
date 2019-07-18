@@ -9,8 +9,6 @@ import { Country } from '../country.model';
 
 @Component({
   selector: 'countries-list',
-  inputs: ['countries'],
-  // styleUrls: ['./movies-list.component.scss'],
   templateUrl: './countries-list.component.html',
   animations: [
     bounceInUpOnEnterAnimation({ duration: 500 }),

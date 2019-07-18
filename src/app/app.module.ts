@@ -15,6 +15,7 @@ import { StoreModule } from './store/store.module';
 import { CountriesModule } from './countries/countries.module';
 import { ResolversModule } from './resolvers/resolvers.module';
 import { LocationsModule } from './locations/locations.module';
+import { AddressModule } from './address/address.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +35,7 @@ import { LocationsModule } from './locations/locations.module';
     StoreModule,
     CountriesModule,
     LocationsModule,
+    AddressModule,
     ResolversModule,
   ],
   providers: [],

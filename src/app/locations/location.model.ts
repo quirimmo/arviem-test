@@ -1,8 +1,4 @@
-export enum LocationFunction {
-  AIRPORT = 'AIRPORT',
-  RAIL_TERMINAL = 'RAIL_TERMINAL',
-  SEAPORT = 'SEAPORT'
-}
+import { AddressRawData, Address } from '../address/address.model';
 
 export interface LocationRawData {
   name: string;
@@ -11,17 +7,27 @@ export interface LocationRawData {
     latitudeInDegrees: number;
     longitudeInDegrees: number;
   };
-  address: {
-    city: string;
-    country: string;
-    continent: string;
-    streetName: string | null;
-    streetNumber: string | null;
-    postalCode: string | null;
-    administrativeLevel2: string | null;
-    administrativeLevel1: string | null;
-  };
+  address: AddressRawData;
   resourceId: string | null;
   version: number | null;
   function: string;
+}
+
+export interface LocationCoordinates {
+  latitude: number;
+  longitude: number;
+}
+
+export enum LocationFunction {
+  AIRPORT = 'AIRPORT',
+  RAIL_TERMINAL = 'RAIL_TERMINAL',
+  SEAPORT = 'SEAPORT'
+}
+
+export interface Location {
+  resourceId: string;
+  name: string;
+  coordinates: LocationCoordinates;
+  address: Address;
+  function: LocationFunction;
 }

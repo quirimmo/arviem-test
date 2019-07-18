@@ -25,8 +25,6 @@ import { ContinentPipe } from './pipes/continent.pipe';
     CommonModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatSelectModule,
-    MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
   ],

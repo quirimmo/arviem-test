@@ -16,6 +16,14 @@ export interface CountryRawData {
   subregion: string;
 }
 
+export interface Country {
+  id: number;
+  name: string;
+  code: string;
+  continent: Continent;
+  flag: string;
+}
+
 export const getContinentByRegion = (region: string, subregion: string): Continent => {
   switch (region.toUpperCase()) {
     case 'OCEANIA':
@@ -27,33 +35,23 @@ export const getContinentByRegion = (region: string, subregion: string): Contine
     case 'AFRICA':
       return Continent.AFRICA;
     case 'AMERICAS':
-      return subregion.toUpperCase() === 'SOUTH AMERICA' ? Continent.SOUTH_AMERICA : Continent.NORTH_AMERICA;
+      return subregion.toUpperCase() === 'SOUTH AMERICA'
+        ? Continent.SOUTH_AMERICA
+        : Continent.NORTH_AMERICA;
     default:
       return Continent.ANTARCTICA;
   }
 };
 
-export class Country {
-  constructor(
-    public id: number,
-    public name: string,
-    public code: string,
-    public continent: Continent,
-    public flag: string,
-  ) {}
-
-  public static buildInstanceFromRaw(
-    {
-      flag, alpha2Code, name, region, subregion,
-    }: CountryRawData,
-    ind: number,
-  ): Country {
-    return new Country(
-      ind,
-      name,
-      alpha2Code,
-      getContinentByRegion(region, subregion),
-      flag,
-    );
-  }
-}
+export const buildCountryFromRaw = (
+  {
+    flag, alpha2Code, name, region, subregion,
+  }: CountryRawData,
+  ind: number,
+): Country => ({
+  id: ind,
+  name,
+  code: alpha2Code,
+  continent: getContinentByRegion(region, subregion),
+  flag,
+});

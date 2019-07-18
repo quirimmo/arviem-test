@@ -23,7 +23,6 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.appLoaderActions.stopLoading();
-    console.log('Resolved locations:', this.locations);
   }
 
   onSelectContinent(continent: Continent): void {
@@ -32,6 +31,5 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   onSelectCountry(country: Country): void {
     this.country = country;
-    console.log('Selected country:', this.country);
   }
 }

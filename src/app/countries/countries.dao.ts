@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, publishReplay } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { ConnectableObservable } from 'rxjs';
-import { Country, CountryRawData } from './country.model';
+import { Country, CountryRawData, buildCountryFromRaw } from './country.model';
 
 export const COUNTRIES_API_BASE_URL = 'https://restcountries.eu/rest/v2/';
 export const COUNTRIES_API_ENDPOINT = 'all';
@@ -21,7 +21,7 @@ export class CountriesDAOService {
 	  this.countries.connect();
 
 	  function buildCountriesFromData(data: CountryRawData[]): Country[] {
-	    return data.map((countryRaw: CountryRawData, index: number): Country => Country.buildInstanceFromRaw(countryRaw, index));
+	    return data.map((countryRaw: CountryRawData, index: number): Country => buildCountryFromRaw(countryRaw, index));
 	  }
 	}
 

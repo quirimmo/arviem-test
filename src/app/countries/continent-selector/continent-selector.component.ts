@@ -31,4 +31,8 @@ export class ContinentSelectorComponent implements OnInit, OnDestroy {
 	    this.continentChangeSubscriber.unsubscribe();
 	  }
 	}
+
+	onSubmit(): void {
+	  console.log('Submitting inner form');
+	}
 }

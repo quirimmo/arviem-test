@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()">
+  <continent-selector (onSelectContinent)="onSelectContinent($event)">
+  </continent-selector>
+  <country-selector
+    [isDependingOnContinent]="true"
+    [continent]="continent"
+    [countries]="countries$ | async"
+    (onSelectCountry)="onSelectCountry($event)"
+  >
+  </country-selector>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Type your city..."
+      [formControl]="cityFormControl"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Type your street name..."
+      [formControl]="streetNameFormControl"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Type your street number..."
+      [formControl]="streetNumberFormControl"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Type your postal code..."
+      [formControl]="postalCodeFormControl"
+    />
+  </mat-form-field>
+  <button mat-button type="submit">Save Address</button>
+</form>
