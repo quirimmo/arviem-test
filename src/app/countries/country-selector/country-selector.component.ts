@@ -1,5 +1,11 @@
 import {
-  Component, Input, OnInit, OnDestroy, OnChanges, Output, EventEmitter,
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  OnChanges,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -7,11 +13,11 @@ import { Country, Continent } from '../country.model';
 
 @Component({
   selector: 'country-selector',
+  styleUrls: ['country-selector.component.scss'],
   templateUrl: './country-selector.component.html',
 })
-
 export class CountrySelectorComponent implements OnInit, OnDestroy, OnChanges {
-	@Input()
+  @Input()
   countries: Country[];
 
   @Input()
@@ -23,7 +29,7 @@ export class CountrySelectorComponent implements OnInit, OnDestroy, OnChanges {
   @Output()
   onSelectCountry: EventEmitter<Country> = new EventEmitter<Country>();
 
-	countrySelect = new FormControl();
+  countrySelect = new FormControl();
   countryChangeSubscriber: Subscription;
 
   constructor() {}
@@ -36,22 +42,26 @@ export class CountrySelectorComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy(): void {
-	  if (this.countryChangeSubscriber) {
-	    this.countryChangeSubscriber.unsubscribe();
-	  }
+    if (this.countryChangeSubscriber) {
+      this.countryChangeSubscriber.unsubscribe();
+    }
   }
 
   getCountries(): Country[] {
-	  return this.continent ? this.countries.filter(({ continent }): boolean => continent === this.continent) : this.countries;
+    return this.continent
+      ? this.countries.filter(
+        ({ continent }): boolean => continent === this.continent,
+      )
+      : this.countries;
   }
 
   ngOnChanges(): void {
-	  this.countrySelect.disable();
+    this.countrySelect.disable();
 
-	  if (this.isDependingOnContinent === true) {
-	    if (this.continent) {
-	      this.countrySelect.enable();
-	    }
-	  }
+    if (this.isDependingOnContinent === true) {
+      if (this.continent) {
+        this.countrySelect.enable();
+      }
+    }
   }
 }

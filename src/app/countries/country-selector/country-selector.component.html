@@ -9,10 +9,15 @@
       >
         <mat-option
           *ngFor="let country of getCountries()"
+          class="country-option col-12"
           id="country-option-{{ country.code }}"
           [value]="country"
         >
-          {{ country.name }}
+          <div class="row">
+            <div class="col-1"><img [src]="country.flag" /></div>
+            <div class="col-1 text-left">{{ country.code }}</div>
+            <div class="col-10  text-left">{{ country.name }}</div>
+          </div>
         </mat-option>
       </mat-select>
       <mat-error *ngIf="countrySelect.hasError('required')">
